@@ -1,0 +1,6 @@
+package.json
+package-lock.json
+babel.config.js
+metro.config.js
+android/
+ios/
