@@ -5,7 +5,7 @@ A simple application to demonstrate React Native testing using Xcode UI Test
 
 ## Build Instructions
 
-### Running the app in a simulator
+### Debug Build
 
 ```bash
 yarn
@@ -15,7 +15,7 @@ cd ..
 yarn ios
 ```
 
-### Running XCUITest
+### Test using XCUITest
 
 -   Open the Xcode project by double-clicking on
     ios/ReactNativeTesting.xcworkspace.
@@ -25,18 +25,20 @@ yarn ios
 -   Run both tests by clicking on the play arrow on line 11 ("class
     ReactNativeXCUITests: UITestCase {").
 
-### Archiving the app
+### Release Build
 
-To test the app using tools like Appium and Cucumber, you need to build an
-archive. You can either use a pre-built archive from the
-[Releases](https://github.com/nareshbhatia/react-native-xcui-testing/releases)
-page or follow the steps to create your own:
+To test the app using tools like Appium and Cucumber, you need a release build
+using your own certificates. Follow the steps to create your own release build:
 
+-   In Xcode, open Project Navigator > Signing & Capabilities.
+-   Fill the details for your certificate. Easiest is to select "Development"
+    for Signing Certificate and let Xcode "Automatically manage signing" (check
+    the checkbox).
 -   Run `yarn ios:release` from the command line.
 -   At the end of the output there will be a line indicating the location of the
-    archive, e.g.
+    release archive, e.g.
     /Users/narbhati/Library/Developer/Xcode/DerivedData/.../ReactNativeTesting.app.
     Note that ReactNativeTesting.app is a directory, not a file. This is the
-    archive that bundles all the files needed to run the app on a simulator.
+    archive that bundles all the files needed to run the app in release mode.
 -   Copy the ReactNativeTesting.app directory to the desired location for
     testing.
